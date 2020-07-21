@@ -20,7 +20,7 @@ jobs:
     - name: Build the stack
       run: docker-compose up -d
     - name: Install dependencies
-      run: dotnet restore --project 
+      run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore 
     - name: Test
