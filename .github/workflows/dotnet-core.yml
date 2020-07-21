@@ -20,8 +20,8 @@ jobs:
     - name: Build the stack
       run: docker-compose up -d
     - name: Install dependencies
-      run: dotnet restore --project "./CreativeTim.Argon.DotNet.Core.Free/CreativeTim.Argon.DotNetCore.Free.csproj"
+      run: dotnet restore --project 
     - name: Build
-      run: dotnet build --configuration Release --no-restore "./CreativeTim.Argon.DotNet.Core.Free/CreativeTim.Argon.DotNetCore.Free.csproj"
+      run: dotnet build --configuration Release --no-restore 
     - name: Test
-      run: dotnet test --no-restore --verbosity normal "./CreativeTim.Argon.DotNet.Core.Free/CreativeTim.Argon.DotNetCore.Free.csproj"
+      run: dotnet test --no-restore --verbosity normal 
