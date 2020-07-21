@@ -1,0 +1,35 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Deploy docker-compose
+      uses: hasnat/deploy-docker-compose@v0.1-alpha
+      with:
+      # repo access token
+      token: 8599aef216b0cbdfbb39ec814476c3a85d8fe1ef
+      # Repo to deploy
+      repository: RT_Service_2020
+      # Repo branch
+      branch: master
+   
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
