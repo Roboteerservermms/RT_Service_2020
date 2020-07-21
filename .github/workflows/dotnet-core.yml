@@ -17,18 +17,18 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    - name: Deploy docker-compose
-      uses: hasnat/deploy-docker-compose@v0.1-alpha
+    - name: apt helper action
+      uses: ryankurte/action-apt@v0.1.0
       with:
-        # repo access token
-        token: 8599aef216b0cbdfbb39ec814476c3a85d8fe1ef
-        # Repo to deploy
-        repository: RT_Service_2020
-        # Repo branch
-        branch: master
+        # architectures to pass to dpkg --add-architecture
+        architectures: ubuntu-latest
+        # apt packages to install
+        packages: docker docker-compose 
+    - name: Install environment
+      run: docker-compose up -d
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore --project "./CreativeTim.Argon.DotNet.Core.Free/CreativeTim.Argon.DotNetCore.Free.csproj"
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore "./CreativeTim.Argon.DotNet.Core.Free/CreativeTim.Argon.DotNetCore.Free.csproj"
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal "./CreativeTim.Argon.DotNet.Core.Free/CreativeTim.Argon.DotNetCore.Free.csproj"
