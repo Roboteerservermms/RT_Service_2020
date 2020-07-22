@@ -33,11 +33,16 @@ namespace Utility.Library
 
     }
 
-    public class DMB{
-        DMB(){
+    public class StreamCamera{
+        public string name{ get; set;}
+        public string passwd{   get; set;   }
+        public string IP{   get; set;   }
+        public bool isConnected{    get; set;   }
+        
+        StreamCamera(){
 
         }
+        
 
     }
 }
-

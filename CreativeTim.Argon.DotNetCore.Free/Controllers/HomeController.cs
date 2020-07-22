@@ -42,6 +42,7 @@ namespace CreativeTim.Argon.DotNetCore.Free.Controllers
         [HttpGet("/Speaker")]
         public IActionResult Speaker()
         {
+
             return View();
         }
 
@@ -126,7 +127,7 @@ namespace CreativeTim.Argon.DotNetCore.Free.Controllers
         }
         
         [HttpGet("/MMS")]
-        public IActionResult Upgrade()
+        public IActionResult MMS()
         {
             return View();
         }
