@@ -39,14 +39,14 @@ namespace CreativeTim.Argon.DotNetCore.Free.Controllers
             return View();
         }
 
-        [HttpGet("/icons")]
-        public IActionResult Icons()
+        [HttpGet("/Speaker")]
+        public IActionResult Speaker()
         {
             return View();
         }
 
-        [HttpGet("/maps")]
-        public IActionResult Maps()
+        [HttpGet("/Mixer")]
+        public IActionResult Mixer()
         {
             return View();
         }
@@ -119,13 +119,13 @@ namespace CreativeTim.Argon.DotNetCore.Free.Controllers
             return RedirectToAction(nameof(Profile));
         }
 
-        [HttpGet("/tables")]
-        public IActionResult Tables()
+        [HttpGet("/DMB")]
+        public IActionResult DMB()
         {
             return View();
         }
         
-        [HttpGet("/upgrade")]
+        [HttpGet("/MMS")]
         public IActionResult Upgrade()
         {
             return View();

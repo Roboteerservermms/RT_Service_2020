@@ -36,17 +36,17 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link @(Context.Request.Path == "/" ? "active" : "")" href="@Url.Action("Index")">
-                            <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                            <i class="ni ni-laptop text-primary"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @(Context.Request.Path == "/icons" ? "active" : "")" href="@Url.Action("Icons")">
-                            <i class="ni ni-planet text-orange"></i> Icons
+                        <a class="nav-link @(Context.Request.Path == "/Speaker" ? "active" : "")" href="@Url.Action("Speaker")">
+                            <i class="ni ni-button-play text-orange"></i> Speaker
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @(Context.Request.Path == "/maps" ? "active" : "")" href="@Url.Action("Maps")">
-                            <i class="ni ni-pin-3 text-primary"></i> Google
+                        <a class="nav-link @(Context.Request.Path == "/Mixer" ? "active" : "")" href="@Url.Action("Mixer")">
+                            <i class="ni ni-ui-04 text-primary"></i> Mixer
                         </a>
                     </li>
                     <li class="nav-item">
@@ -55,8 +55,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @(Context.Request.Path == "/tables" ? "active" : "")" href="@Url.Action("Tables")">
-                            <i class="ni ni-bullet-list-67 text-default"></i> Tables
+                        <a class="nav-link @(Context.Request.Path == "/DMB" ? "active" : "")" href="@Url.Action("DMB")">
+                            <i class="ni ni-tv-2 text-default"></i> DMB
                         </a>
                     </li>
                     
