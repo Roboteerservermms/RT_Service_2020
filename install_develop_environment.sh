@@ -7,7 +7,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update; \
   sudo apt-get install -y apt-transport-https && \
   sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-3.1 aspnetcore-runtime-3.1 docker docker-compose git
+  sudo apt-get install -y dotnet-sdk-3.1 aspnetcore-runtime-3.1 docker docker-compose git npm
 
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i ./gitkraken-amd64.deb
@@ -17,7 +17,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.micr
 sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code 
-
+npm install -g nouislider
 code --list-extensions
 code --install-extension ms-dotnettools.csharp
 code --install-extension jchannon.csharpextensions

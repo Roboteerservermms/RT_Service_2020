@@ -1,91 +1,119 @@
-<!-- 2nd Row: Card stats (only for dashboard) -->
-<div class="row">
-    <div class="col-xl-3 col-md-6">
-        <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5>
-                        <span class="h2 font-weight-bold mb-0">350,897</span>
-                    </div>
-                    <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                            <i class="ni ni-active-40"></i>
+ <script src="jquery.nouislider.all.min.js"></script>
+<link rel="stylesheet" href="jquery.nouislider.min.css">
+ <!-- 2nd Row: Card stats (only for dashboard) -->
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Speaker volume</h5>
+                        </div>
+                        <div class="col-auto">
+                            <script>
+                                import noUiSlider from 'nouislider';
+                                var resultElement = document.getElementById('result');
+                                var sliders = document.getElementsByClassName('sliders');
+                                var audio = [0, 0, 0];
+
+                                [].slice.call(sliders).forEach(function (slider, index) {
+
+                                    noUiSlider.create(slider, {
+                                        start: 127,
+                                        connect: [true, false],
+                                        orientation: "vertical",
+                                        range: {
+                                            'min': 0,
+                                            'max': 255
+                                        },
+                                        format: wNumb({
+                                            decimals: 0
+                                        })
+                                    });
+
+                                    // Bind the audio changing function to the update event.
+                                    slider.noUiSlider.on('update', function () {
+
+                                        audio[index] = slider.noUiSlider.get();
+
+                                        var audio = 'audio(' + audios.join(',') + ')';
+
+                                        resultElement.style.background = audio;
+                                        resultElement.style.audio = audio;
+                                    });
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
-                <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                </p>
             </div>
         </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                        <span class="h2 font-weight-bold mb-0">2,356</span>
-                    </div>
-                    <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                            <i class="ni ni-chart-pie-35"></i>
+        <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Mixer</h5>
+                            <span class="h2 font-weight-bold mb-0">2,356</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                                <i class="ni ni-chart-pie-35"></i>
+                            </div>
                         </div>
                     </div>
+                    <p class="mt-3 mb-0 text-sm">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                        <span class="text-nowrap">Since last month</span>
+                    </p>
                 </div>
-                <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                </p>
             </div>
         </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                        <span class="h2 font-weight-bold mb-0">924</span>
-                    </div>
-                    <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                            <i class="ni ni-money-coins"></i>
+        <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                            <span class="h2 font-weight-bold mb-0">924</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                                <i class="ni ni-money-coins"></i>
+                            </div>
                         </div>
                     </div>
+                    <p class="mt-3 mb-0 text-sm">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                        <span class="text-nowrap">Since last month</span>
+                    </p>
                 </div>
-                <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                </p>
             </div>
         </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                        <span class="h2 font-weight-bold mb-0">49,65%</span>
-                    </div>
-                    <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                            <i class="ni ni-chart-bar-32"></i>
+        <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                            <span class="h2 font-weight-bold mb-0">49,65%</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                                <i class="ni ni-chart-bar-32"></i>
+                            </div>
                         </div>
                     </div>
+                    <p class="mt-3 mb-0 text-sm">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                        <span class="text-nowrap">Since last month</span>
+                    </p>
                 </div>
-                <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                </p>
             </div>
         </div>
     </div>
-</div>
+}

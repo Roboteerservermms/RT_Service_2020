@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using CreativeTim.Argon.DotNetCore.Free.Data;
 using CreativeTim.Argon.DotNetCore.Free.Infrastructure;
 using CreativeTim.Argon.DotNetCore.Free.Infrastructure.ApplicationUserClaims;
-using CreativeTim.Argon.DotNetCore.Free.Infrastructure.AppSettingsModels;
 using CreativeTim.Argon.DotNetCore.Free.Models.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -126,8 +125,7 @@ namespace CreativeTim.Argon.DotNetCore.Free
 
             services.AddAntiforgery();
 
-            services.Configure<ScriptTags>(Configuration.GetSection(nameof(ScriptTags)));
-
+            
             services.AddControllersWithViews(options =>
             { 
                 // Slugify routes so that we can use /employee/employee-details/1 instead of

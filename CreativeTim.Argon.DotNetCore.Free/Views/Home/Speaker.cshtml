@@ -1,5 +1,4 @@
-﻿<script src="~/vendor/nouislider/distribute/nouislider.min.js"></script>
-@{
+﻿@{
     ViewData["Title"] = "Speaker";
 }
 
@@ -10,18 +9,7 @@
                 <h3 class="mb-0">Speaker</h3>
             </div>
             <div class="card-body">
-                <script>
-                    var slider = document.getElementById('slider');
-                    noUiSlider.create(slider, {
-                            start: [20, 80],
-                            connect: true,
-                            range: {
-                                    'min': 0,
-                                    'max': 100
-                            }
-                        }
-                    );
-                </script>
+                <div id="slider"></div>
             </div>
         </div>
     </div>

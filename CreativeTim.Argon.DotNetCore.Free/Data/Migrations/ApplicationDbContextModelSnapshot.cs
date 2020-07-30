@@ -27,9 +27,6 @@ namespace CreativeTim.Argon.DotNetCore.Free.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("timestamp without time zone");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("text");
@@ -42,9 +39,6 @@ namespace CreativeTim.Argon.DotNetCore.Free.Data.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("FullName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("JobDescription")
                         .HasColumnType("text");
 
                     b.Property<bool>("LockoutEnabled")
@@ -63,12 +57,6 @@ namespace CreativeTim.Argon.DotNetCore.Free.Data.Migrations
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");

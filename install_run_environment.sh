@@ -27,6 +27,8 @@ case MACHINE in
         download_install_tarfile
     ;;
 
+npm install -g nouislider
+sudo docker-compose -f docker-compose-external-services.yml up -d
 
 download_install_tarfile(){
     wget CORE_TAR_FILE_LOCALE
